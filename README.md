@@ -7,12 +7,12 @@
 3. 小心内存爆炸。
 
 ### 其他
-- 平台：.NetCore 3.1
-- 感谢项目([azurlane-doujin/AzurLanePaintingExtract-v1.0](https://github.com/azurlane-doujin/AzurLanePaintingExtract-v1.0))分享的算法
+- .NetCore 3.1
+- 感谢项目([AzurLanePaintingExtract-v1.0](https://github.com/azurlane-doujin/AzurLanePaintingExtract-v1.0))分享的算法
 - 少数立绘因为图片内容不全无法还原
 - 少数立绘无需还原，若还原图片则被打乱
 
-- ### 老婆们
+### 老婆们
 ![神通(貎).军师大人](assets/神通(貎).军师大人.png)
 ![吾妻(猉).细语春霞](assets/吾妻(猉).细语春霞.png)
 ![逸仙.誓约 凤冠霞帔](assets/逸仙.誓约%20凤冠霞帔.png)
