@@ -1,21 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Scighost\\OneDrive\\Code\\AzurLane-Painting-Tool\\AzurLanePaintingTool.csproj": {}
+    "C:\\Users\\Scighost\\OneDrive\\Code\\！归档（不再更新）\\AzurLane-Painting-Tool\\AzurLanePaintingTool.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Scighost\\OneDrive\\Code\\AzurLane-Painting-Tool\\AzurLanePaintingTool.csproj": {
+    "C:\\Users\\Scighost\\OneDrive\\Code\\！归档（不再更新）\\AzurLane-Painting-Tool\\AzurLanePaintingTool.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Scighost\\OneDrive\\Code\\AzurLane-Painting-Tool\\AzurLanePaintingTool.csproj",
+        "projectUniqueName": "C:\\Users\\Scighost\\OneDrive\\Code\\！归档（不再更新）\\AzurLane-Painting-Tool\\AzurLanePaintingTool.csproj",
         "projectName": "AzurLanePaintingTool",
-        "projectPath": "C:\\Users\\Scighost\\OneDrive\\Code\\AzurLane-Painting-Tool\\AzurLanePaintingTool.csproj",
+        "projectPath": "C:\\Users\\Scighost\\OneDrive\\Code\\！归档（不再更新）\\AzurLane-Painting-Tool\\AzurLanePaintingTool.csproj",
         "packagesPath": "C:\\Users\\Scighost\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Scighost\\OneDrive\\Code\\AzurLane-Painting-Tool\\obj\\",
+        "outputPath": "C:\\Users\\Scighost\\OneDrive\\Code\\！归档（不再更新）\\AzurLane-Painting-Tool\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
           "C:\\Users\\Scighost\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -26,6 +30,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -37,6 +42,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "System.Drawing.Common": {
               "target": "Package",
@@ -64,7 +70,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100-preview.8.20417.9\\RuntimeIdentifierGraph.json"
         }
       }
     }

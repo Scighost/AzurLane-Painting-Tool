@@ -200,13 +200,38 @@ namespace ConsoleApp
             var target = new Bitmap(width, height);
             target.SetResolution(src.HorizontalResolution, src.VerticalResolution);
             Graphics graphics = Graphics.FromImage(target);
+            BitmapData oldBitmapData;
+            BitmapData newBitmapData;
             // seem to Ctrl+C and Ctrl+V.
-            mapping.ForEach(x =>
+            foreach (var item in mapping)
             {
+                oldBitmapData = src.LockBits(item[0], ImageLockMode.ReadOnly, src.PixelFormat);
+                newBitmapData = target.LockBits(item[1], ImageLockMode.WriteOnly, src.PixelFormat);
+                unsafe
+                {
+                    byte* ptrOld = (byte*)oldBitmapData.Scan0;
+                    byte* ptrNew = (byte*)newBitmapData.Scan0;
+                    int oldOffset = oldBitmapData.Stride - item[0].Width * 4;
+                    int newOffset = newBitmapData.Stride - item[1].Width * 4;
+                    for (int i = 0; i < item[0].Height; i++)
+                    {
+                        for (int j = 0; j < item[0].Width; j++)
+                        {
+                            ptrNew[0] = ptrOld[0];
+                            ptrNew[1] = ptrOld[1];
+                            ptrNew[2] = ptrOld[2];
+                            ptrNew[3] = ptrOld[3];
+                            ptrOld += 4;
+                            ptrNew += 4;
+                        }
+                        ptrOld += oldOffset;
+                        ptrNew += newOffset;
+                    }
+                }
+                src.UnlockBits(oldBitmapData);
+                target.UnlockBits(newBitmapData);
                 // exclude zero-sized block
-                if (x[0].Width > 0 && x[0].Height > 0)
-                    graphics.DrawImage(src.Clone(x[0], src.PixelFormat), x[1]);
-            });
+            }
             target.RotateFlip(RotateFlipType.RotateNoneFlipY);
             graphics.Dispose();
             src.Dispose();
