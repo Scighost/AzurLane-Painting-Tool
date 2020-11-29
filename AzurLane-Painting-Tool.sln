@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzurLane-Painting-Tool", "AzurLane-Painting-Tool\AzurLane-Painting-Tool.csproj", "{217E3121-F6BD-408F-9178-A615E79CE7D0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{217E3121-F6BD-408F-9178-A615E79CE7D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{217E3121-F6BD-408F-9178-A615E79CE7D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{217E3121-F6BD-408F-9178-A615E79CE7D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{217E3121-F6BD-408F-9178-A615E79CE7D0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {565EACFF-1472-404D-8483-FA00AAD4D694}
+	EndGlobalSection
+EndGlobal

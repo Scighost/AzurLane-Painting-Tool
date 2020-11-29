@@ -1,0 +1,85 @@
+﻿<Window x:Class="AzurLane_Painting_Tool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        xmlns:local="clr-namespace:AzurLane_Painting_Tool"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        mc:Ignorable="d" Loaded="Window_Loaded" Closed="Window_Closed"
+        Title="AzurlanePaintingTool" Height="720" Width="1080">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" MinWidth="320"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <GridSplitter Grid.Column="1" Width="3" BorderThickness="1" VerticalAlignment="Stretch" HorizontalAlignment="Center" Background="Gray" ShowsPreview="True"/>
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" x:Name="btn_AddFolder" Content="添加文件夹" Margin="10 5 5 5" Click="btn_AddFolder_Click"/>
+                <hc:SearchBar Grid.Column="1" x:Name="searchBar" Margin="5 5 10 5" MinWidth="200" hc:InfoElement.Placeholder="Search" Style="{StaticResource SearchBarPlus}"
+                              Text="{Binding SearchText,UpdateSourceTrigger=PropertyChanged}"/>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="btnExport" Grid.Column="0" Margin="10 5 5 5" Content="导出" Click="btnExport_Click"
+                    IsEnabled="{Binding BtnExportEnable}"/>
+                <ProgressBar x:Name="progressBar" Grid.Column="1" Margin="5 5 10 5" Height="30" Opacity="0.4" Background="White" BorderBrush="Gray" BorderThickness="1"
+                             Value="{Binding ProgressValue}" Maximum="{Binding ProgressMax}"
+                             Foreground="{Binding ProgressColor}" FontSize="0.01"/>
+            </Grid>
+
+            <ListView Grid.Row="2" x:Name="listView" ItemsSource="{Binding}" AllowDrop="True" Style="{Binding}" BorderBrush="Transparent"
+                      DragEnter="listView_DragEnter" DragOver="listView_DragOver" Drop="listView_Drop" SelectionChanged="listView_SelectionChanged">
+                <ListView.View>
+                    <GridView>
+                        <GridView.Columns>
+                            <GridViewColumn>
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <CheckBox x:Name="itemCheckBox" IsChecked="{Binding IsSelected}" IsThreeState="False" Checked="itemCheckBox_Checked" Unchecked="itemCheckBox_Unchecked"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                                <GridViewColumn.Header>
+                                    <CheckBox x:Name="allCheckBox" IsThreeState="False" Checked="allCheckBox_Checked" Unchecked="allCheckBox_Unchecked"/>
+                                </GridViewColumn.Header>
+                            </GridViewColumn>
+                            <GridViewColumn Header="Name" Width="300" DisplayMemberBinding="{Binding PaintingName}"/>
+                        </GridView.Columns>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="150"/>
+            </Grid.RowDefinitions>
+            <Image Source="{Binding NewImageSource}" Grid.Row="0"/>
+            <GridSplitter Grid.Row="1" Height="3" BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Background="Gray" ShowsPreview="True"/>
+            <DockPanel Grid.Row="2">
+                <Image Source="{Binding OldImageSource}" DockPanel.Dock="Right"/>
+                <TextBlock x:Name="textBlock" Margin="20 10 20 10" LineHeight="25"/>
+            </DockPanel>
+        </Grid>
+
+    </Grid>
+</Window>
