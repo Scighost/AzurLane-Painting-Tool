@@ -148,7 +148,7 @@ namespace AzurLane_Painting_Tool
         private void LoadPaintingsIndex()
         {
             string path = Path.Combine(Environment.CurrentDirectory, "filematches.txt");
-            string url = "https://github.com/scighost/AzurLane-Painting-Tool/blob/gui-ver/assets/filematches.txt";
+            string url = "https://raw.githubusercontent.com/scighost/AzurLane-Painting-Tool/gui-ver/assets/filematches.txt";
             try
             {
                 // 不存在立绘索引文件则直接下载
