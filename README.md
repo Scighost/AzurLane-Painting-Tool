@@ -6,7 +6,7 @@
 1. 拖入obj和png文件，或直接选择文件夹；
 2. ……
 
-![screenshot](assets/screenshot.png)
+![screenshot](assets/screenshot.jpg)
 
 ### 其他
 - .NET Framework 4.7.2

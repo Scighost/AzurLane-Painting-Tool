@@ -653,6 +653,8 @@ badan(巴丹)->:
 badan_2(巴丹.皮肤1 软绵绵睡衣)->:
 baerdimo(巴尔的摩)->:
 baerdimo_2(巴尔的摩.皮肤1 放学后的ACE)->:
+baerdimo_4(巴尔的摩.皮肤2 Black Ace)->:
+baerdimo_4_n(巴尔的摩.皮肤2 Black Ace.无背景)->:
 baerdimo_dark_shadow(巴尔的摩.黑)->:
 bangkeshan(邦克山)->:
 beierfasite_3(贝尔法斯特.皮肤2 优雅而高贵的从者)->:

@@ -26,11 +26,14 @@
             <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Button Grid.Column="0" x:Name="btn_AddFolder" Content="添加文件夹" Margin="10 5 5 5" Click="btn_AddFolder_Click"/>
-                <hc:SearchBar Grid.Column="1" x:Name="searchBar" Margin="5 5 10 5" MinWidth="200" hc:InfoElement.Placeholder="Search" Style="{StaticResource SearchBarPlus}"
-                              Text="{Binding SearchText,UpdateSourceTrigger=PropertyChanged}"/>
+                <Button Grid.Column="1" x:Name="btnExport" Margin="5 5 5 5" Content="导出" Click="btnExport_Click"
+                    IsEnabled="{Binding BtnExportEnable}"/>
+                <ProgressBar Grid.Column="2" x:Name="progressBar" Margin="5 5 10 5" Height="30" Opacity="0.4" Background="White" BorderBrush="Gray" BorderThickness="1"
+                             Value="{Binding ProgressValue}" Maximum="{Binding ProgressMax}" Foreground="{Binding ProgressColor}" FontSize="0.01"/>
             </Grid>
 
             <Grid Grid.Row="1">
@@ -38,14 +41,11 @@
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="btnExport" Grid.Column="0" Margin="10 5 5 5" Content="导出" Click="btnExport_Click"
-                    IsEnabled="{Binding BtnExportEnable}"/>
-                <ProgressBar x:Name="progressBar" Grid.Column="1" Margin="5 5 10 5" Height="30" Opacity="0.4" Background="White" BorderBrush="Gray" BorderThickness="1"
-                             Value="{Binding ProgressValue}" Maximum="{Binding ProgressMax}"
-                             Foreground="{Binding ProgressColor}" FontSize="0.01"/>
+                <hc:SearchBar Grid.Column="1" x:Name="searchBar" Margin="5 5 10 5" MinWidth="200" hc:InfoElement.Placeholder="Search" Style="{StaticResource SearchBarPlus}"
+                              Text="{Binding SearchText,UpdateSourceTrigger=PropertyChanged}"/>
             </Grid>
 
-            <ListView Grid.Row="2" x:Name="listView" ItemsSource="{Binding}" AllowDrop="True" Style="{Binding}" BorderBrush="Transparent"
+            <ListView Grid.Row="2" x:Name="listView" ItemsSource="{Binding}" AllowDrop="True" Style="{Binding}" BorderBrush="Transparent" ScrollViewer.VerticalScrollBarVisibility="Visible"
                       DragEnter="listView_DragEnter" DragOver="listView_DragOver" Drop="listView_Drop" SelectionChanged="listView_SelectionChanged">
                 <ListView.View>
                     <GridView>
